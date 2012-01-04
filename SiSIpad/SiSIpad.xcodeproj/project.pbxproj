@@ -18,6 +18,7 @@
 		24421BC914B4994200C33D28 /* SiSIpad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24421BC714B4994200C33D28 /* SiSIpad.xcdatamodeld */; };
 		24421BCC14B4994200C33D28 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BCB14B4994200C33D28 /* MasterViewController.m */; };
 		24421BCF14B4994200C33D28 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BCE14B4994200C33D28 /* DetailViewController.m */; };
+		24421BDB14B4EBDE00C33D28 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BDA14B4EBDE00C33D28 /* CoreDataTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		24421BCB14B4994200C33D28 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		24421BCD14B4994200C33D28 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		24421BCE14B4994200C33D28 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		24421BD914B4EBDE00C33D28 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = "../../../CoreDataTableViewController.zip Folder/CoreDataTableViewController.h"; sourceTree = "<group>"; };
+		24421BDA14B4EBDE00C33D28 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = "../../../CoreDataTableViewController.zip Folder/CoreDataTableViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 		24421BB814B4994200C33D28 /* SiSIpad */ = {
 			isa = PBXGroup;
 			children = (
+				24421BD914B4EBDE00C33D28 /* CoreDataTableViewController.h */,
+				24421BDA14B4EBDE00C33D28 /* CoreDataTableViewController.m */,
 				24421BC114B4994200C33D28 /* AppDelegate.h */,
 				24421BC214B4994200C33D28 /* AppDelegate.m */,
 				24421BC414B4994200C33D28 /* MainStoryboard.storyboard */,
@@ -178,6 +183,7 @@
 				24421BC914B4994200C33D28 /* SiSIpad.xcdatamodeld in Sources */,
 				24421BCC14B4994200C33D28 /* MasterViewController.m in Sources */,
 				24421BCF14B4994200C33D28 /* DetailViewController.m in Sources */,
+				24421BDB14B4EBDE00C33D28 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,7 @@
         <attribute name="volumeLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="142" positionY="-90" width="128" height="60"/>
+        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
         <element name="ComputerSystem" positionX="-342" positionY="-285" width="128" height="120"/>
         <element name="Signal" positionX="-18" positionY="-180" width="128" height="120"/>
         <element name="Message" positionX="25" positionY="-315" width="128" height="90"/>
