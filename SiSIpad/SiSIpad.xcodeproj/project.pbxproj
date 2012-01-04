@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24421BB114B4994200C33D28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24421BB014B4994200C33D28 /* UIKit.framework */; };
+		24421BB314B4994200C33D28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24421BB214B4994200C33D28 /* Foundation.framework */; };
+		24421BB514B4994200C33D28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24421BB414B4994200C33D28 /* CoreGraphics.framework */; };
+		24421BB714B4994200C33D28 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24421BB614B4994200C33D28 /* CoreData.framework */; };
+		24421BBD14B4994200C33D28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24421BBB14B4994200C33D28 /* InfoPlist.strings */; };
+		24421BBF14B4994200C33D28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BBE14B4994200C33D28 /* main.m */; };
+		24421BC314B4994200C33D28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BC214B4994200C33D28 /* AppDelegate.m */; };
+		24421BC614B4994200C33D28 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24421BC414B4994200C33D28 /* MainStoryboard.storyboard */; };
+		24421BC914B4994200C33D28 /* SiSIpad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24421BC714B4994200C33D28 /* SiSIpad.xcdatamodeld */; };
+		24421BCC14B4994200C33D28 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BCB14B4994200C33D28 /* MasterViewController.m */; };
+		24421BCF14B4994200C33D28 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BCE14B4994200C33D28 /* DetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		24421BAC14B4994200C33D28 /* SiSIpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiSIpad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24421BB014B4994200C33D28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24421BB214B4994200C33D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		24421BB414B4994200C33D28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		24421BB614B4994200C33D28 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		24421BBA14B4994200C33D28 /* SiSIpad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SiSIpad-Info.plist"; sourceTree = "<group>"; };
+		24421BBC14B4994200C33D28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		24421BBE14B4994200C33D28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		24421BC014B4994200C33D28 /* SiSIpad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SiSIpad-Prefix.pch"; sourceTree = "<group>"; };
+		24421BC114B4994200C33D28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		24421BC214B4994200C33D28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		24421BC514B4994200C33D28 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		24421BC814B4994200C33D28 /* SiSIpad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SiSIpad.xcdatamodel; sourceTree = "<group>"; };
+		24421BCA14B4994200C33D28 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		24421BCB14B4994200C33D28 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		24421BCD14B4994200C33D28 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		24421BCE14B4994200C33D28 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24421BA914B4994200C33D28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24421BB114B4994200C33D28 /* UIKit.framework in Frameworks */,
+				24421BB314B4994200C33D28 /* Foundation.framework in Frameworks */,
+				24421BB514B4994200C33D28 /* CoreGraphics.framework in Frameworks */,
+				24421BB714B4994200C33D28 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24421BA114B4994200C33D28 = {
+			isa = PBXGroup;
+			children = (
+				24421BB814B4994200C33D28 /* SiSIpad */,
+				24421BAF14B4994200C33D28 /* Frameworks */,
+				24421BAD14B4994200C33D28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24421BAD14B4994200C33D28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24421BAC14B4994200C33D28 /* SiSIpad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24421BAF14B4994200C33D28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24421BB014B4994200C33D28 /* UIKit.framework */,
+				24421BB214B4994200C33D28 /* Foundation.framework */,
+				24421BB414B4994200C33D28 /* CoreGraphics.framework */,
+				24421BB614B4994200C33D28 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24421BB814B4994200C33D28 /* SiSIpad */ = {
+			isa = PBXGroup;
+			children = (
+				24421BC114B4994200C33D28 /* AppDelegate.h */,
+				24421BC214B4994200C33D28 /* AppDelegate.m */,
+				24421BC414B4994200C33D28 /* MainStoryboard.storyboard */,
+				24421BCA14B4994200C33D28 /* MasterViewController.h */,
+				24421BCB14B4994200C33D28 /* MasterViewController.m */,
+				24421BCD14B4994200C33D28 /* DetailViewController.h */,
+				24421BCE14B4994200C33D28 /* DetailViewController.m */,
+				24421BC714B4994200C33D28 /* SiSIpad.xcdatamodeld */,
+				24421BB914B4994200C33D28 /* Supporting Files */,
+			);
+			path = SiSIpad;
+			sourceTree = "<group>";
+		};
+		24421BB914B4994200C33D28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24421BBA14B4994200C33D28 /* SiSIpad-Info.plist */,
+				24421BBB14B4994200C33D28 /* InfoPlist.strings */,
+				24421BBE14B4994200C33D28 /* main.m */,
+				24421BC014B4994200C33D28 /* SiSIpad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24421BAB14B4994200C33D28 /* SiSIpad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24421BD214B4994200C33D28 /* Build configuration list for PBXNativeTarget "SiSIpad" */;
+			buildPhases = (
+				24421BA814B4994200C33D28 /* Sources */,
+				24421BA914B4994200C33D28 /* Frameworks */,
+				24421BAA14B4994200C33D28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SiSIpad;
+			productName = SiSIpad;
+			productReference = 24421BAC14B4994200C33D28 /* SiSIpad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24421BA314B4994200C33D28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = TTU;
+			};
+			buildConfigurationList = 24421BA614B4994200C33D28 /* Build configuration list for PBXProject "SiSIpad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 24421BA114B4994200C33D28;
+			productRefGroup = 24421BAD14B4994200C33D28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24421BAB14B4994200C33D28 /* SiSIpad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24421BAA14B4994200C33D28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24421BBD14B4994200C33D28 /* InfoPlist.strings in Resources */,
+				24421BC614B4994200C33D28 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24421BA814B4994200C33D28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24421BBF14B4994200C33D28 /* main.m in Sources */,
+				24421BC314B4994200C33D28 /* AppDelegate.m in Sources */,
+				24421BC914B4994200C33D28 /* SiSIpad.xcdatamodeld in Sources */,
+				24421BCC14B4994200C33D28 /* MasterViewController.m in Sources */,
+				24421BCF14B4994200C33D28 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		24421BBB14B4994200C33D28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24421BBC14B4994200C33D28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		24421BC414B4994200C33D28 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24421BC514B4994200C33D28 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24421BD014B4994200C33D28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		24421BD114B4994200C33D28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24421BD314B4994200C33D28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SiSIpad/SiSIpad-Prefix.pch";
+				INFOPLIST_FILE = "SiSIpad/SiSIpad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		24421BD414B4994200C33D28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SiSIpad/SiSIpad-Prefix.pch";
+				INFOPLIST_FILE = "SiSIpad/SiSIpad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24421BA614B4994200C33D28 /* Build configuration list for PBXProject "SiSIpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24421BD014B4994200C33D28 /* Debug */,
+				24421BD114B4994200C33D28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24421BD214B4994200C33D28 /* Build configuration list for PBXNativeTarget "SiSIpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24421BD314B4994200C33D28 /* Debug */,
+				24421BD414B4994200C33D28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		24421BC714B4994200C33D28 /* SiSIpad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				24421BC814B4994200C33D28 /* SiSIpad.xcdatamodel */,
+			);
+			currentVersion = 24421BC814B4994200C33D28 /* SiSIpad.xcdatamodel */;
+			path = SiSIpad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 24421BA314B4994200C33D28 /* Project object */;
+}
