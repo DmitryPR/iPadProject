@@ -17,6 +17,15 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
+@synthesize channelIdSegmentedControl = _channelIdSegmentedControl;
+@synthesize sliderIdSegmentedControl = _sliderIdSegmentedControl;
+@synthesize volumeLevelSlider = _volumeLevelSlider;
+@synthesize generateButton = _generateButton;
+@synthesize signalIdTextField = _signalIdTextField;
+@synthesize sourceTextField = _sourceTextField;
+@synthesize channelIdTextField = _channelIdTextField;
+@synthesize sliderIdTextField = _sliderIdTextField;
+@synthesize volumeLevelTextField = _volumeLevelTextField;
 @synthesize masterPopoverController = _masterPopoverController;
 
 #pragma mark - Managing the detail item
@@ -61,6 +70,15 @@
 
 - (void)viewDidUnload
 {
+    [self setChannelIdSegmentedControl:nil];
+    [self setSliderIdSegmentedControl:nil];
+    [self setVolumeLevelSlider:nil];
+    [self setGenerateButton:nil];
+    [self setSignalIdTextField:nil];
+    [self setSourceTextField:nil];
+    [self setChannelIdTextField:nil];
+    [self setSliderIdTextField:nil];
+    [self setVolumeLevelTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
