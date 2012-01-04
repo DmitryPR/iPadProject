@@ -19,6 +19,13 @@
 		24421BCC14B4994200C33D28 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BCB14B4994200C33D28 /* MasterViewController.m */; };
 		24421BCF14B4994200C33D28 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BCE14B4994200C33D28 /* DetailViewController.m */; };
 		24421BDB14B4EBDE00C33D28 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421BDA14B4EBDE00C33D28 /* CoreDataTableViewController.m */; };
+		24421C0C14B4F25500C33D28 /* ComputerSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C0B14B4F25500C33D28 /* ComputerSystem.m */; };
+		24421C0F14B4F25600C33D28 /* Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C0E14B4F25500C33D28 /* Signal.m */; };
+		24421C1214B4F25600C33D28 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1114B4F25600C33D28 /* Message.m */; };
+		24421C1514B4F25600C33D28 /* Operator.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1414B4F25600C33D28 /* Operator.m */; };
+		24421C1814B4F25600C33D28 /* AudioSystemParameteres.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1714B4F25600C33D28 /* AudioSystemParameteres.m */; };
+		24421C1B14B4F25600C33D28 /* AudioSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1A14B4F25600C33D28 /* AudioSystem.m */; };
+		24421C1E14B4F25700C33D28 /* OperatorParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1D14B4F25700C33D28 /* OperatorParameters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +48,20 @@
 		24421BCE14B4994200C33D28 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		24421BD914B4EBDE00C33D28 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = "../../../CoreDataTableViewController.zip Folder/CoreDataTableViewController.h"; sourceTree = "<group>"; };
 		24421BDA14B4EBDE00C33D28 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = "../../../CoreDataTableViewController.zip Folder/CoreDataTableViewController.m"; sourceTree = "<group>"; };
+		24421C0A14B4F25500C33D28 /* ComputerSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComputerSystem.h; path = SiSIpad/CoreDataAttributesAndRelationships/ComputerSystem.h; sourceTree = "<group>"; };
+		24421C0B14B4F25500C33D28 /* ComputerSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComputerSystem.m; path = SiSIpad/CoreDataAttributesAndRelationships/ComputerSystem.m; sourceTree = "<group>"; };
+		24421C0D14B4F25500C33D28 /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Signal.h; path = SiSIpad/CoreDataAttributesAndRelationships/Signal.h; sourceTree = "<group>"; };
+		24421C0E14B4F25500C33D28 /* Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Signal.m; path = SiSIpad/CoreDataAttributesAndRelationships/Signal.m; sourceTree = "<group>"; };
+		24421C1014B4F25600C33D28 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = SiSIpad/CoreDataAttributesAndRelationships/Message.h; sourceTree = "<group>"; };
+		24421C1114B4F25600C33D28 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = SiSIpad/CoreDataAttributesAndRelationships/Message.m; sourceTree = "<group>"; };
+		24421C1314B4F25600C33D28 /* Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Operator.h; path = SiSIpad/CoreDataAttributesAndRelationships/Operator.h; sourceTree = "<group>"; };
+		24421C1414B4F25600C33D28 /* Operator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Operator.m; path = SiSIpad/CoreDataAttributesAndRelationships/Operator.m; sourceTree = "<group>"; };
+		24421C1614B4F25600C33D28 /* AudioSystemParameteres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioSystemParameteres.h; path = SiSIpad/CoreDataAttributesAndRelationships/AudioSystemParameteres.h; sourceTree = "<group>"; };
+		24421C1714B4F25600C33D28 /* AudioSystemParameteres.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioSystemParameteres.m; path = SiSIpad/CoreDataAttributesAndRelationships/AudioSystemParameteres.m; sourceTree = "<group>"; };
+		24421C1914B4F25600C33D28 /* AudioSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioSystem.h; path = SiSIpad/CoreDataAttributesAndRelationships/AudioSystem.h; sourceTree = "<group>"; };
+		24421C1A14B4F25600C33D28 /* AudioSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioSystem.m; path = SiSIpad/CoreDataAttributesAndRelationships/AudioSystem.m; sourceTree = "<group>"; };
+		24421C1C14B4F25700C33D28 /* OperatorParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperatorParameters.h; path = SiSIpad/CoreDataAttributesAndRelationships/OperatorParameters.h; sourceTree = "<group>"; };
+		24421C1D14B4F25700C33D28 /* OperatorParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperatorParameters.m; path = SiSIpad/CoreDataAttributesAndRelationships/OperatorParameters.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +82,7 @@
 		24421BA114B4994200C33D28 = {
 			isa = PBXGroup;
 			children = (
+				24421C1F14B4F2DE00C33D28 /* CoreDataAttributesAndRelationships */,
 				24421BB814B4994200C33D28 /* SiSIpad */,
 				24421BAF14B4994200C33D28 /* Frameworks */,
 				24421BAD14B4994200C33D28 /* Products */,
@@ -113,6 +135,27 @@
 				24421BC014B4994200C33D28 /* SiSIpad-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24421C1F14B4F2DE00C33D28 /* CoreDataAttributesAndRelationships */ = {
+			isa = PBXGroup;
+			children = (
+				24421C1C14B4F25700C33D28 /* OperatorParameters.h */,
+				24421C1D14B4F25700C33D28 /* OperatorParameters.m */,
+				24421C1914B4F25600C33D28 /* AudioSystem.h */,
+				24421C1A14B4F25600C33D28 /* AudioSystem.m */,
+				24421C1614B4F25600C33D28 /* AudioSystemParameteres.h */,
+				24421C1714B4F25600C33D28 /* AudioSystemParameteres.m */,
+				24421C1314B4F25600C33D28 /* Operator.h */,
+				24421C1414B4F25600C33D28 /* Operator.m */,
+				24421C1014B4F25600C33D28 /* Message.h */,
+				24421C1114B4F25600C33D28 /* Message.m */,
+				24421C0D14B4F25500C33D28 /* Signal.h */,
+				24421C0E14B4F25500C33D28 /* Signal.m */,
+				24421C0A14B4F25500C33D28 /* ComputerSystem.h */,
+				24421C0B14B4F25500C33D28 /* ComputerSystem.m */,
+			);
+			name = CoreDataAttributesAndRelationships;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +227,13 @@
 				24421BCC14B4994200C33D28 /* MasterViewController.m in Sources */,
 				24421BCF14B4994200C33D28 /* DetailViewController.m in Sources */,
 				24421BDB14B4EBDE00C33D28 /* CoreDataTableViewController.m in Sources */,
+				24421C0C14B4F25500C33D28 /* ComputerSystem.m in Sources */,
+				24421C0F14B4F25600C33D28 /* Signal.m in Sources */,
+				24421C1214B4F25600C33D28 /* Message.m in Sources */,
+				24421C1514B4F25600C33D28 /* Operator.m in Sources */,
+				24421C1814B4F25600C33D28 /* AudioSystemParameteres.m in Sources */,
+				24421C1B14B4F25600C33D28 /* AudioSystem.m in Sources */,
+				24421C1E14B4F25700C33D28 /* OperatorParameters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

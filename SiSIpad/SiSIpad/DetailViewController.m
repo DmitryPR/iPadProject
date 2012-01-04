@@ -7,16 +7,15 @@
 //
 
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
+@property (nonatomic, strong) MasterViewController *masterViewController;
+
 @end
 
 @implementation DetailViewController
-
-@synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize channelIdSegmentedControl = _channelIdSegmentedControl;
 @synthesize sliderIdSegmentedControl = _sliderIdSegmentedControl;
 @synthesize volumeLevelSlider = _volumeLevelSlider;
@@ -26,17 +25,18 @@
 @synthesize channelIdTextField = _channelIdTextField;
 @synthesize sliderIdTextField = _sliderIdTextField;
 @synthesize volumeLevelTextField = _volumeLevelTextField;
+@synthesize sourceSegmentedControl = _sourceSegmentedControl;
 @synthesize masterPopoverController = _masterPopoverController;
+@synthesize signalID = _signalID;
+@synthesize masterViewController = _masterViewController;
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
+- (void)setSignalID:(NSNumber *)signalID {
+    
+    if (_signalID != signalID) {
+        _signalID = signalID;
         // Update the view.
-        [self configureView];
     }
 
     if (self.masterPopoverController != nil) {
@@ -44,20 +44,9 @@
     }        
 }
 
-- (void)configureView
-{
-    // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+
 
 #pragma mark - View lifecycle
 
@@ -65,7 +54,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+  
 }
 
 - (void)viewDidUnload
@@ -79,30 +68,12 @@
     [self setChannelIdTextField:nil];
     [self setSliderIdTextField:nil];
     [self setVolumeLevelTextField:nil];
+    [self setSourceSegmentedControl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -126,4 +97,7 @@
     self.masterPopoverController = nil;
 }
 
+- (IBAction)generateTheSignal:(id)sender {
+    
+}
 @end

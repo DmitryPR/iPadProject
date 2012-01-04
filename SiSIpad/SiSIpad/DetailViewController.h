@@ -10,10 +10,9 @@
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
 
-@property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
+@property (nonatomic, strong) NSNumber *signalID;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *channelIdSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sliderIdSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISlider *volumeLevelSlider;
@@ -24,4 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *channelIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sliderIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *volumeLevelTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sourceSegmentedControl;
+- (IBAction)generateTheSignal:(id)sender;
 @end

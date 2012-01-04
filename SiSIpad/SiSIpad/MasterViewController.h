@@ -11,14 +11,12 @@
 @class DetailViewController;
 
 #import <CoreData/CoreData.h>
+#import "CoreDataTableViewController.h"
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
-
-
-
+@interface MasterViewController : CoreDataTableViewController 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+@property (nonatomic, strong) UIManagedDocument *signalDatabase;  // Model is a Core Data database of signals
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @end
