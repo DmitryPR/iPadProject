@@ -271,6 +271,7 @@
     NSLog(@"We have %d operators", [computerSystem.operatorID count]);
     NSLog(@"We have %d audioSystems", [computerSystem.audioSystemID count]);
     NSLog(@"We have %d messages", [computerSystem.messageID count]);
+  
     
 }
 

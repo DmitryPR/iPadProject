@@ -122,7 +122,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"CheckTheComputerSystem"]) {
-        [segue.destinationViewController setDelegate:self.masterViewController];
+        
        
     }
 }
