@@ -9,8 +9,12 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Signal.h"
-#import "Operator.h"
-#import "AudioSystem.h"
+#import "Operator+Create.h"
+#import "AudioSystem+Create.h"
+#import "OperatorParameters.h"
+#import "AudioSystemParameteres.h"
+#import "ComputerSystem+Create.h"
+#import "Message.h"
 
 @interface MasterViewController() <DetailViewControllerDelegate>
 @end
@@ -54,15 +58,11 @@
         }
         signal.signalID = [NSNumber numberWithInt:arc4random() % 1000];
        
+        signal.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:document.managedObjectContext];  
         
-        //implement the connection
-        //signal.computerSystemID = 
         NSLog(@"We have done it");
     
-//    } else {
-//        signal = [matches lastObject];
-//        NSLog (@"Duplicate Found");
-//    }
+
     [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
 }
 
@@ -181,13 +181,16 @@
 -(void)detailViewControllerDidAddOperatorAndAudioSystem:(DetailViewController *)sender {
     
     NSLog (@"Adding the guys"); 
-    Operator *operator = [NSEntityDescription insertNewObjectForEntityForName:@"Operator" inManagedObjectContext:self.signalDatabase.managedObjectContext];
-    operator.name = [NSString stringWithString:self.detailViewController.operatorTextField.text];
-    operator.operatorID = [NSNumber numberWithInt:arc4random() % 10];
+    Operator *operator = [Operator operatorWithName:self.detailViewController.operatorTextField.text withID:[NSNumber numberWithInt:arc4random() % 10] sourceType:@"OSC" inManagedObjectContext: self.signalDatabase.managedObjectContext]; 
     
-    AudioSystem *audioSystem = [NSEntityDescription insertNewObjectForEntityForName:@"AudioSystem" inManagedObjectContext:self.signalDatabase.managedObjectContext];
-    audioSystem.name = [NSString stringWithString:self.detailViewController.audioSystemTextField.text];
-    audioSystem.audioSystemID = [NSNumber numberWithInt:arc4random() % 10];
+    operator.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
+   
+    
+    AudioSystem *audioSystem = [AudioSystem audioSystemWithName:self.detailViewController.audioSystemTextField.text withID:[NSNumber numberWithInt:arc4random() % 10] sourceType:@"MIDI" inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    
+    audioSystem.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    
+    
     [self.signalDatabase saveToURL:self.signalDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
     
 }

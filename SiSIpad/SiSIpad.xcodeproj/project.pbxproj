@@ -26,6 +26,9 @@
 		24421C1814B4F25600C33D28 /* AudioSystemParameteres.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1714B4F25600C33D28 /* AudioSystemParameteres.m */; };
 		24421C1B14B4F25600C33D28 /* AudioSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1A14B4F25600C33D28 /* AudioSystem.m */; };
 		24421C1E14B4F25700C33D28 /* OperatorParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C1D14B4F25700C33D28 /* OperatorParameters.m */; };
+		24421C2514B5256A00C33D28 /* ComputerSystem+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2414B5256A00C33D28 /* ComputerSystem+Create.m */; };
+		24421C2814B52D8200C33D28 /* Operator+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2714B52D8100C33D28 /* Operator+Create.m */; };
+		24421C2B14B52D9A00C33D28 /* AudioSystem+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,12 @@
 		24421C1A14B4F25600C33D28 /* AudioSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioSystem.m; path = SiSIpad/CoreDataAttributesAndRelationships/AudioSystem.m; sourceTree = "<group>"; };
 		24421C1C14B4F25700C33D28 /* OperatorParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperatorParameters.h; path = SiSIpad/CoreDataAttributesAndRelationships/OperatorParameters.h; sourceTree = "<group>"; };
 		24421C1D14B4F25700C33D28 /* OperatorParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperatorParameters.m; path = SiSIpad/CoreDataAttributesAndRelationships/OperatorParameters.m; sourceTree = "<group>"; };
+		24421C2314B5256A00C33D28 /* ComputerSystem+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ComputerSystem+Create.h"; path = "SiSIpad/CoreDataAttributesAndRelationships/ComputerSystem+Create.h"; sourceTree = "<group>"; };
+		24421C2414B5256A00C33D28 /* ComputerSystem+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ComputerSystem+Create.m"; path = "SiSIpad/CoreDataAttributesAndRelationships/ComputerSystem+Create.m"; sourceTree = "<group>"; };
+		24421C2614B52D8100C33D28 /* Operator+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Operator+Create.h"; path = "SiSIpad/CoreDataAttributesAndRelationships/Operator+Create.h"; sourceTree = "<group>"; };
+		24421C2714B52D8100C33D28 /* Operator+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Operator+Create.m"; path = "SiSIpad/CoreDataAttributesAndRelationships/Operator+Create.m"; sourceTree = "<group>"; };
+		24421C2914B52D9900C33D28 /* AudioSystem+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AudioSystem+Create.h"; path = "SiSIpad/CoreDataAttributesAndRelationships/AudioSystem+Create.h"; sourceTree = "<group>"; };
+		24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AudioSystem+Create.m"; path = "SiSIpad/CoreDataAttributesAndRelationships/AudioSystem+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				24421C1C14B4F25700C33D28 /* OperatorParameters.h */,
+				24421C2314B5256A00C33D28 /* ComputerSystem+Create.h */,
+				24421C2414B5256A00C33D28 /* ComputerSystem+Create.m */,
 				24421C1D14B4F25700C33D28 /* OperatorParameters.m */,
 				24421C1914B4F25600C33D28 /* AudioSystem.h */,
 				24421C1A14B4F25600C33D28 /* AudioSystem.m */,
@@ -154,6 +165,10 @@
 				24421C0E14B4F25500C33D28 /* Signal.m */,
 				24421C0A14B4F25500C33D28 /* ComputerSystem.h */,
 				24421C0B14B4F25500C33D28 /* ComputerSystem.m */,
+				24421C2614B52D8100C33D28 /* Operator+Create.h */,
+				24421C2914B52D9900C33D28 /* AudioSystem+Create.h */,
+				24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */,
+				24421C2714B52D8100C33D28 /* Operator+Create.m */,
 			);
 			name = CoreDataAttributesAndRelationships;
 			sourceTree = "<group>";
@@ -234,6 +249,9 @@
 				24421C1814B4F25600C33D28 /* AudioSystemParameteres.m in Sources */,
 				24421C1B14B4F25600C33D28 /* AudioSystem.m in Sources */,
 				24421C1E14B4F25700C33D28 /* OperatorParameters.m in Sources */,
+				24421C2514B5256A00C33D28 /* ComputerSystem+Create.m in Sources */,
+				24421C2814B52D8200C33D28 /* Operator+Create.m in Sources */,
+				24421C2B14B52D9A00C33D28 /* AudioSystem+Create.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
