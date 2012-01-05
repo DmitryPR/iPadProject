@@ -35,6 +35,11 @@
 @synthesize masterViewController = _masterViewController;
 @synthesize delegate = _delegate;
 @synthesize operatorTextField = _operatorTextField;
+@synthesize numberOfOperatorsTextField = _numberOfOperatorsTextField;
+@synthesize numberOfMessagesTextField = _numberOfMessagesTextField;
+@synthesize numberOfAudioSystemsTextField = _numberOfAudioSystemsTextField;
+@synthesize numberOfSignalsTextField = _numberOfSignalsTextField;
+@synthesize computerSystemIDTextField = _computerSystemIDTextField;
 
 #pragma mark - Managing the detail item
 
@@ -120,10 +125,5 @@
     [self.delegate detailViewControllerDidGenerateSignal:self];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"CheckTheComputerSystem"]) {
-        
-       
-    }
-}
+
 @end

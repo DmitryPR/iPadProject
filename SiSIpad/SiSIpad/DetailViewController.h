@@ -37,6 +37,12 @@
 @property (nonatomic, weak) id <DetailViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *operatorTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *numberOfOperatorsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *numberOfMessagesTextField;
+@property (weak, nonatomic) IBOutlet UITextField *numberOfAudioSystemsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *numberOfSignalsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *computerSystemIDTextField;
+
 - (IBAction)addOperatorAndAudioSystem;
 - (IBAction)checkTheComputerSystemPressed;
 - (IBAction)generateTheSignal;

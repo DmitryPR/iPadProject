@@ -18,7 +18,7 @@
 
 
 
-@interface MasterViewController() <DetailViewControllerDelegate, ComputerSystemViewControllerDelegate>
+@interface MasterViewController() <DetailViewControllerDelegate>
 
 @end
 
@@ -28,7 +28,7 @@
 
 @synthesize signalDatabase = _signalDatabase;
 @synthesize detailViewController = _detailViewController;
-@synthesize computerSystemViewController = _computerSystemViewController;
+
 
 
 
@@ -167,7 +167,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     [self.detailViewController setDelegate:self];
-    [self.computerSystemViewController setDelegate:self];
+    
    
     
 }
@@ -240,26 +240,10 @@
     
 }
 
--(void)computerSystemViewControllerDidRequestDatabaseChek:(ComputerSystemViewController *)sender {
 
-    NSLog (@"Entered the DB");
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ComputerSystem"];
-    request.predicate = [NSPredicate predicateWithFormat:@"computerSystemID = %d", 1];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"computerSystemID" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    NSError *error = nil;
-    NSArray *computerSystems = [self.signalDatabase.managedObjectContext executeFetchRequest:request error:&error];
-    ComputerSystem *computerSystem = [computerSystems lastObject];
-    self.computerSystemViewController.numberOfSignalsTextField.text = [NSString stringWithFormat:@"%d", [computerSystem.signalID count]]; 
-    self.computerSystemViewController.numberOfOperatorsTextField.text =
-    [NSString stringWithFormat:@"%d", [computerSystem.operatorID count]]; 
-    self.computerSystemViewController.numberOfMessagesTextField.text = [NSString stringWithFormat:@"%d", [computerSystem.messageID count]]; 
-    self.computerSystemViewController.numberOfAudioSystemsTextField.text= [NSString stringWithFormat:@"%d", [computerSystem.audioSystemID count]];
-    NSLog (@"Exited the DB");
-    
-}
 -(void)detailViewControllerDidPressTheComputerSystemButton:(DetailViewController *)sender { 
     NSLog (@"Going to check the ComputerSystem");
+    NSLog (@"Entered the DB");
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ComputerSystem"];
     request.predicate = [NSPredicate predicateWithFormat:@"computerSystemID = %d", 1];
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"computerSystemID" ascending:YES];
@@ -271,6 +255,13 @@
     NSLog(@"We have %d operators", [computerSystem.operatorID count]);
     NSLog(@"We have %d audioSystems", [computerSystem.audioSystemID count]);
     NSLog(@"We have %d messages", [computerSystem.messageID count]);
+    self.detailViewController.computerSystemIDTextField.text = [NSString stringWithFormat:@"%d", 1];
+    self.detailViewController.numberOfSignalsTextField.text = [NSString stringWithFormat:@"%d", [computerSystem.signalID count]]; 
+    self.detailViewController.numberOfOperatorsTextField.text =
+    [NSString stringWithFormat:@"%d", [computerSystem.operatorID count]]; 
+    self.detailViewController.numberOfMessagesTextField.text = [NSString stringWithFormat:@"%d", [computerSystem.messageID count]]; 
+    self.detailViewController.numberOfAudioSystemsTextField.text= [NSString stringWithFormat:@"%d", [computerSystem.audioSystemID count]];
+    NSLog (@"Exited the DB");
   
     
 }

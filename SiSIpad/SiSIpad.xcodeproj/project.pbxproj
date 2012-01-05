@@ -30,6 +30,8 @@
 		24421C2814B52D8200C33D28 /* Operator+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2714B52D8100C33D28 /* Operator+Create.m */; };
 		24421C2B14B52D9A00C33D28 /* AudioSystem+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */; };
 		24421C3114B54D3800C33D28 /* ComputerSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C3014B54D3800C33D28 /* ComputerSystemViewController.m */; };
+		24421C3314B586EF00C33D28 /* small.png in Resources */ = {isa = PBXBuildFile; fileRef = 24421C3214B586EE00C33D28 /* small.png */; };
+		24421C3514B586FB00C33D28 /* small.png in Resources */ = {isa = PBXBuildFile; fileRef = 24421C3414B586FB00C33D28 /* small.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AudioSystem+Create.m"; path = "SiSIpad/CoreDataAttributesAndRelationships/AudioSystem+Create.m"; sourceTree = "<group>"; };
 		24421C2F14B54D3700C33D28 /* ComputerSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputerSystemViewController.h; sourceTree = "<group>"; };
 		24421C3014B54D3800C33D28 /* ComputerSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerSystemViewController.m; sourceTree = "<group>"; };
+		24421C3214B586EE00C33D28 /* small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = small.png; path = ../../../small.png; sourceTree = "<group>"; };
+		24421C3414B586FB00C33D28 /* small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		24421BA114B4994200C33D28 = {
 			isa = PBXGroup;
 			children = (
+				24421C3414B586FB00C33D28 /* small.png */,
 				24421C1F14B4F2DE00C33D28 /* CoreDataAttributesAndRelationships */,
 				24421BB814B4994200C33D28 /* SiSIpad */,
 				24421BAF14B4994200C33D28 /* Frameworks */,
@@ -143,6 +148,7 @@
 		24421BB914B4994200C33D28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24421C3214B586EE00C33D28 /* small.png */,
 				24421BBA14B4994200C33D28 /* SiSIpad-Info.plist */,
 				24421BBB14B4994200C33D28 /* InfoPlist.strings */,
 				24421BBE14B4994200C33D28 /* main.m */,
@@ -231,6 +237,8 @@
 			files = (
 				24421BBD14B4994200C33D28 /* InfoPlist.strings in Resources */,
 				24421BC614B4994200C33D28 /* MainStoryboard.storyboard in Resources */,
+				24421C3314B586EF00C33D28 /* small.png in Resources */,
+				24421C3514B586FB00C33D28 /* small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

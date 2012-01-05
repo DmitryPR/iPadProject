@@ -12,12 +12,12 @@
 
 #import <CoreData/CoreData.h>
 #import "CoreDataTableViewController.h"
-#import "ComputerSystemViewController.h"
+
 
 @interface MasterViewController : CoreDataTableViewController 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (nonatomic, strong) UIManagedDocument *signalDatabase;  // Model is a Core Data database of signals
-@property (nonatomic, strong) ComputerSystemViewController *computerSystemViewController;
+
 
 
 
