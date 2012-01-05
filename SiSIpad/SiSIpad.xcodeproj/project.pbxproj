@@ -29,6 +29,7 @@
 		24421C2514B5256A00C33D28 /* ComputerSystem+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2414B5256A00C33D28 /* ComputerSystem+Create.m */; };
 		24421C2814B52D8200C33D28 /* Operator+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2714B52D8100C33D28 /* Operator+Create.m */; };
 		24421C2B14B52D9A00C33D28 /* AudioSystem+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */; };
+		24421C2E14B53E0D00C33D28 /* ComputerSystemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24421C2D14B53E0D00C33D28 /* ComputerSystemTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		24421C2714B52D8100C33D28 /* Operator+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Operator+Create.m"; path = "SiSIpad/CoreDataAttributesAndRelationships/Operator+Create.m"; sourceTree = "<group>"; };
 		24421C2914B52D9900C33D28 /* AudioSystem+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AudioSystem+Create.h"; path = "SiSIpad/CoreDataAttributesAndRelationships/AudioSystem+Create.h"; sourceTree = "<group>"; };
 		24421C2A14B52D9A00C33D28 /* AudioSystem+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AudioSystem+Create.m"; path = "SiSIpad/CoreDataAttributesAndRelationships/AudioSystem+Create.m"; sourceTree = "<group>"; };
+		24421C2C14B53E0C00C33D28 /* ComputerSystemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputerSystemTableViewController.h; sourceTree = "<group>"; };
+		24421C2D14B53E0D00C33D28 /* ComputerSystemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerSystemTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				24421BC114B4994200C33D28 /* AppDelegate.h */,
 				24421BC214B4994200C33D28 /* AppDelegate.m */,
 				24421BC414B4994200C33D28 /* MainStoryboard.storyboard */,
+				24421C2C14B53E0C00C33D28 /* ComputerSystemTableViewController.h */,
+				24421C2D14B53E0D00C33D28 /* ComputerSystemTableViewController.m */,
 				24421BCA14B4994200C33D28 /* MasterViewController.h */,
 				24421BCB14B4994200C33D28 /* MasterViewController.m */,
 				24421BCD14B4994200C33D28 /* DetailViewController.h */,
@@ -252,6 +257,7 @@
 				24421C2514B5256A00C33D28 /* ComputerSystem+Create.m in Sources */,
 				24421C2814B52D8200C33D28 /* Operator+Create.m in Sources */,
 				24421C2B14B52D9A00C33D28 /* AudioSystem+Create.m in Sources */,
+				24421C2E14B53E0D00C33D28 /* ComputerSystemTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

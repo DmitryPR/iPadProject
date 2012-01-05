@@ -15,8 +15,10 @@
 #import "AudioSystemParameteres.h"
 #import "ComputerSystem+Create.h"
 #import "Message.h"
+#import "ComputerSystemTableViewController.h"
 
 @interface MasterViewController() <DetailViewControllerDelegate>
+
 @end
 
 @implementation MasterViewController
@@ -25,6 +27,7 @@
 
 @synthesize signalDatabase = _signalDatabase;
 @synthesize detailViewController = _detailViewController;
+@synthesize computerSystemTableViewController = _computerSystemTableViewController;
 
 
 
@@ -42,25 +45,49 @@
 //    if (!matches || ([matches count] > 1)) {
 //        // handle error
 //    } else if ([matches count] == 0) {
+         Message *message = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    
+    
         signal = [NSEntityDescription insertNewObjectForEntityForName:@"Signal" inManagedObjectContext:self.signalDatabase.managedObjectContext];
         
         signal.channelID = [NSNumber numberWithInt:self.detailViewController.channelIdSegmentedControl.selectedSegmentIndex +1];
         signal.sliderID = [NSNumber numberWithInt:self.detailViewController.sliderIdSegmentedControl.selectedSegmentIndex +1];
         signal.volumeLevel= [NSNumber numberWithInt:self.detailViewController.volumeLevelSlider.value];
+    
+      
         
         
         if (self.detailViewController.sourceSegmentedControl.selectedSegmentIndex == 0) {
             signal.source = [NSString stringWithString:@"Operator"];
+            AudioSystemParameteres *audioSystemParameters = [NSEntityDescription insertNewObjectForEntityForName:@"AudioSystemParameteres" inManagedObjectContext:document.managedObjectContext];
+            
+            audioSystemParameters.channelID = [NSNumber numberWithInt:self.detailViewController.channelIdSegmentedControl.selectedSegmentIndex +1];
+            audioSystemParameters.sliderID = [NSNumber numberWithInt:self.detailViewController.sliderIdSegmentedControl.selectedSegmentIndex +1];
+            audioSystemParameters.volumeLevel= [NSNumber numberWithInt:self.detailViewController.volumeLevelSlider.value];
+            audioSystemParameters.audioSystemParametersID = [NSNumber numberWithInt:arc4random() % 100000];
+            message.source = [NSString stringWithString:@"Operator"];
+            message.value = [NSString stringWithString:@"Operator has sucessfully generated the signal"];
+            message.messageID = [NSNumber numberWithInt:arc4random() % 1000];
+            message.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
         }
         
         else {
             signal.source = [NSString stringWithString:@"AudioSystem"];
+            OperatorParameters *operatorParameteres = [NSEntityDescription insertNewObjectForEntityForName:@"OperatorParameters" inManagedObjectContext:document.managedObjectContext];
+            
+            operatorParameteres.channelID = [NSNumber numberWithInt:self.detailViewController.channelIdSegmentedControl.selectedSegmentIndex +1];
+            operatorParameteres.sliderID = [NSNumber numberWithInt:self.detailViewController.sliderIdSegmentedControl.selectedSegmentIndex +1];
+            operatorParameteres.volumeLevel= [NSNumber numberWithInt:self.detailViewController.volumeLevelSlider.value];
+            operatorParameteres.operatorParametersID = [NSNumber numberWithInt:arc4random() % 100000];
+            message.source = [NSString stringWithString:@"AudioSystem"];
+            message.value = [NSString stringWithString:@"AudioSystem has sucessfully generated the signal"];
+            message.messageID = [NSNumber numberWithInt:arc4random() % 1000];
+            message.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
         }
         signal.signalID = [NSNumber numberWithInt:arc4random() % 1000];
-       
         signal.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:document.managedObjectContext];  
         
-        NSLog(@"We have done it");
+        NSLog(@"Signal is sent");
     
 
     [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
@@ -138,6 +165,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     [self.detailViewController setDelegate:self];
+    self.computerSystemTableViewController.tableView.delegate = self;
+    self.computerSystemTableViewController.tableView.dataSource = self;
+    self.computerSystemTableViewController.cell1.textLabel.text = @"Hi";
+    self.computerSystemTableViewController.cell1.detailTextLabel.text = @"SomeTest";
+    
 }
 
 
@@ -174,21 +206,34 @@
 }
 
 -(void)detailViewControllerDidGenerateSignal:(DetailViewController *)sender {
-    NSLog(@"We are here");
+    NSLog(@"Signal Generate Button Pressed");
     [self fetchSignalDataIntoDocument:self.signalDatabase];   
 }
 
 -(void)detailViewControllerDidAddOperatorAndAudioSystem:(DetailViewController *)sender {
     
+    Message *message = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    
+    
     NSLog (@"Adding the guys"); 
     Operator *operator = [Operator operatorWithName:self.detailViewController.operatorTextField.text withID:[NSNumber numberWithInt:arc4random() % 10] sourceType:@"OSC" inManagedObjectContext: self.signalDatabase.managedObjectContext]; 
     
     operator.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    
+    message.source = [NSString stringWithString:@"Operator"];
+    message.value = [NSString stringWithString:@"Operator has been sucessfully added"];
+    message.messageID = [NSNumber numberWithInt:arc4random() % 1000];
+    message.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
    
     
     AudioSystem *audioSystem = [AudioSystem audioSystemWithName:self.detailViewController.audioSystemTextField.text withID:[NSNumber numberWithInt:arc4random() % 10] sourceType:@"MIDI" inManagedObjectContext:self.signalDatabase.managedObjectContext];
     
     audioSystem.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    
+    message.source = [NSString stringWithString:@"AudioSystem"];
+    message.value = [NSString stringWithString:@"AudioSystem has been sucessfully added"];
+    message.messageID = [NSNumber numberWithInt:arc4random() % 1000];
+    message.computerSystemID = [ComputerSystem computerSystemWithID:[NSNumber numberWithInt:1] inManagedObjectContext:self.signalDatabase.managedObjectContext];
     
     
     [self.signalDatabase saveToURL:self.signalDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];

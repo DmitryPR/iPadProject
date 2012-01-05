@@ -10,6 +10,7 @@
 #import "MasterViewController.h"
 #import "Operator.h"
 #import "AudioSystem.h"
+#import "ComputerSystemTableViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -113,5 +114,12 @@
 
 - (IBAction)generateTheSignal {
     [self.delegate detailViewControllerDidGenerateSignal:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"CheckTheComputerSystem"]) {
+        [segue.destinationViewController setComputerSystemIDSelected:[NSNumber numberWithInt:1]];
+       
+    }
 }
 @end
