@@ -13,7 +13,8 @@
 
 @optional
 -(void)detailViewControllerDidGenerateSignal:(DetailViewController *)sender;
--(void)detailViewControllerDidAddOperatorAndAudioSystem:(DetailViewController *)sender; 
+-(void)detailViewControllerDidAddOperatorAndAudioSystem:(DetailViewController *)sender;
+-(void)detailViewControllerDidPressTheComputerSystemButton:(DetailViewController *)sender;
 @end
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
@@ -35,7 +36,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *audioSystemTextField;
 @property (nonatomic, weak) id <DetailViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *operatorTextField;
-- (IBAction)addOperatorAndAudioSystem;
 
+- (IBAction)addOperatorAndAudioSystem;
+- (IBAction)checkTheComputerSystemPressed;
 - (IBAction)generateTheSignal;
 @end

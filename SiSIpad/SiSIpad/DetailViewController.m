@@ -10,7 +10,7 @@
 #import "MasterViewController.h"
 #import "Operator.h"
 #import "AudioSystem.h"
-#import "ComputerSystemTableViewController.h"
+#import "ComputerSystemViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -112,13 +112,17 @@
     [self.delegate detailViewControllerDidAddOperatorAndAudioSystem:self];
 }
 
+- (IBAction)checkTheComputerSystemPressed {
+    [self.delegate detailViewControllerDidPressTheComputerSystemButton:self];
+}
+
 - (IBAction)generateTheSignal {
     [self.delegate detailViewControllerDidGenerateSignal:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"CheckTheComputerSystem"]) {
-        [segue.destinationViewController setComputerSystemIDSelected:[NSNumber numberWithInt:1]];
+        [segue.destinationViewController setDelegate:self.masterViewController];
        
     }
 }

@@ -15,9 +15,10 @@
 #import "AudioSystemParameteres.h"
 #import "ComputerSystem+Create.h"
 #import "Message.h"
-#import "ComputerSystemTableViewController.h"
 
-@interface MasterViewController() <DetailViewControllerDelegate>
+
+
+@interface MasterViewController() <DetailViewControllerDelegate, ComputerSystemViewControllerDelegate>
 
 @end
 
@@ -27,7 +28,7 @@
 
 @synthesize signalDatabase = _signalDatabase;
 @synthesize detailViewController = _detailViewController;
-@synthesize computerSystemTableViewController = _computerSystemTableViewController;
+@synthesize computerSystemViewController = _computerSystemViewController;
 
 
 
@@ -53,7 +54,8 @@
         signal.channelID = [NSNumber numberWithInt:self.detailViewController.channelIdSegmentedControl.selectedSegmentIndex +1];
         signal.sliderID = [NSNumber numberWithInt:self.detailViewController.sliderIdSegmentedControl.selectedSegmentIndex +1];
         signal.volumeLevel= [NSNumber numberWithInt:self.detailViewController.volumeLevelSlider.value];
-    
+        
+     
       
         
         
@@ -165,10 +167,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     [self.detailViewController setDelegate:self];
-    self.computerSystemTableViewController.tableView.delegate = self;
-    self.computerSystemTableViewController.tableView.dataSource = self;
-    self.computerSystemTableViewController.cell1.textLabel.text = @"Hi";
-    self.computerSystemTableViewController.cell1.detailTextLabel.text = @"SomeTest";
+    [self.computerSystemViewController setDelegate:self];
+   
     
 }
 
@@ -239,6 +239,42 @@
     [self.signalDatabase saveToURL:self.signalDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
     
 }
+
+-(void)computerSystemViewControllerDidRequestDatabaseChek:(ComputerSystemViewController *)sender {
+
+    NSLog (@"Entered the DB");
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ComputerSystem"];
+    request.predicate = [NSPredicate predicateWithFormat:@"computerSystemID = %d", 1];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"computerSystemID" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSError *error = nil;
+    NSArray *computerSystems = [self.signalDatabase.managedObjectContext executeFetchRequest:request error:&error];
+    ComputerSystem *computerSystem = [computerSystems lastObject];
+    self.computerSystemViewController.numberOfSignalsTextField.text = [NSString stringWithFormat:@"%d", [computerSystem.signalID count]]; 
+    self.computerSystemViewController.numberOfOperatorsTextField.text =
+    [NSString stringWithFormat:@"%d", [computerSystem.operatorID count]]; 
+    self.computerSystemViewController.numberOfMessagesTextField.text = [NSString stringWithFormat:@"%d", [computerSystem.messageID count]]; 
+    self.computerSystemViewController.numberOfAudioSystemsTextField.text= [NSString stringWithFormat:@"%d", [computerSystem.audioSystemID count]];
+    NSLog (@"Exited the DB");
+    
+}
+-(void)detailViewControllerDidPressTheComputerSystemButton:(DetailViewController *)sender { 
+    NSLog (@"Going to check the ComputerSystem");
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ComputerSystem"];
+    request.predicate = [NSPredicate predicateWithFormat:@"computerSystemID = %d", 1];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"computerSystemID" ascending:YES];
+    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSError *error = nil;
+    NSArray *computerSystems = [self.signalDatabase.managedObjectContext executeFetchRequest:request error:&error];
+    ComputerSystem *computerSystem = [computerSystems lastObject];
+    NSLog(@"We have %d signals", [computerSystem.signalID count]);
+    NSLog(@"We have %d operators", [computerSystem.operatorID count]);
+    NSLog(@"We have %d audioSystems", [computerSystem.audioSystemID count]);
+    NSLog(@"We have %d messages", [computerSystem.messageID count]);
+    
+}
+
+
 
 
 @end
