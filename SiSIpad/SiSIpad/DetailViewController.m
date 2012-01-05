@@ -8,6 +8,8 @@
 
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "Operator.h"
+#import "AudioSystem.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -26,9 +28,12 @@
 @synthesize sliderIdTextField = _sliderIdTextField;
 @synthesize volumeLevelTextField = _volumeLevelTextField;
 @synthesize sourceSegmentedControl = _sourceSegmentedControl;
+@synthesize audioSystemTextField = _audioSystemTextField;
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize signalID = _signalID;
 @synthesize masterViewController = _masterViewController;
+@synthesize delegate = _delegate;
+@synthesize operatorTextField = _operatorTextField;
 
 #pragma mark - Managing the detail item
 
@@ -54,6 +59,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //Doing some configuration here:
+    
   
 }
 
@@ -69,6 +76,8 @@
     [self setSliderIdTextField:nil];
     [self setVolumeLevelTextField:nil];
     [self setSourceSegmentedControl:nil];
+    [self setOperatorTextField:nil];
+    [self setAudioSystemTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -97,7 +106,12 @@
     self.masterPopoverController = nil;
 }
 
-- (IBAction)generateTheSignal:(id)sender {
-    
+
+- (IBAction)addOperatorAndAudioSystem {
+    [self.delegate detailViewControllerDidAddOperatorAndAudioSystem:self];
+}
+
+- (IBAction)generateTheSignal {
+    [self.delegate detailViewControllerDidGenerateSignal:self];
 }
 @end

@@ -18,5 +18,4 @@
 @property (nonatomic, strong) UIManagedDocument *signalDatabase;  // Model is a Core Data database of signals
 
 
-
 @end

@@ -9,28 +9,35 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Signal.h"
+#import "Operator.h"
+#import "AudioSystem.h"
 
-
+@interface MasterViewController() <DetailViewControllerDelegate>
+@end
 
 @implementation MasterViewController
+
 
 
 @synthesize signalDatabase = _signalDatabase;
 @synthesize detailViewController = _detailViewController;
 
+
+
+
 -(void)fetchSignalDataIntoDocument:(UIManagedDocument*)document {
-    Signal *signal= nil;
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Signal"];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"signalID" ascending:YES];
-    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    
-    NSError *error = nil;
-    NSArray *matches = [self.signalDatabase.managedObjectContext executeFetchRequest:request error:&error];
-    
-    if (!matches || ([matches count] > 1)) {
-        // handle error
-    } else if ([matches count] == 0) {
+        Signal *signal= nil;
+//    
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Signal"];
+//    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"signalID" ascending:YES];
+//    request.sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+//    
+//    NSError *error = nil;
+//    NSArray *matches = [self.signalDatabase.managedObjectContext executeFetchRequest:request error:&error];
+//    
+//    if (!matches || ([matches count] > 1)) {
+//        // handle error
+//    } else if ([matches count] == 0) {
         signal = [NSEntityDescription insertNewObjectForEntityForName:@"Signal" inManagedObjectContext:self.signalDatabase.managedObjectContext];
         
         signal.channelID = [NSNumber numberWithInt:self.detailViewController.channelIdSegmentedControl.selectedSegmentIndex +1];
@@ -45,15 +52,17 @@
         else {
             signal.source = [NSString stringWithString:@"AudioSystem"];
         }
-        signal.signalID = [NSNumber numberWithInt:arc4random() % 10000000000];
-        self.detailViewController.signalID = [NSNumber numberWithInt:arc4random() % 100000000000]; 
+        signal.signalID = [NSNumber numberWithInt:arc4random() % 1000];
+       
         
         //implement the connection
         //signal.computerSystemID = 
+        NSLog(@"We have done it");
     
-    } else {
-        signal = [matches lastObject];
-    }
+//    } else {
+//        signal = [matches lastObject];
+//        NSLog (@"Duplicate Found");
+//    }
     [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
 }
 
@@ -128,6 +137,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    [self.detailViewController setDelegate:self];
 }
 
 
@@ -147,7 +157,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     Signal *signal = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", signal.signalID];
+    cell.textLabel.text = [NSString stringWithString:[signal.signalID stringValue]];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%d", signal.signalID];
     cell.detailTextLabel.text = signal.source;
     return cell;
 }
@@ -155,11 +166,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Signal *signal = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    self.detailViewController.signalIdTextField.text = [NSString stringWithFormat:@"%d", signal.signalID];
+    self.detailViewController.signalIdTextField.text = [NSString stringWithFormat:@"%d",[signal.signalID intValue]];
     self.detailViewController.sourceTextField.text = [NSString stringWithString:signal.source];
-    self.detailViewController.channelIdTextField.text = [NSString stringWithFormat:@"%d", signal.channelID];
-    self.detailViewController.sliderIdTextField.text = [NSString stringWithFormat:@"%d", signal.sliderID];
-    self.detailViewController.volumeLevelTextField.text = [NSString stringWithFormat:@"%d", signal.volumeLevel];
+    self.detailViewController.channelIdTextField.text = [NSString stringWithFormat:@"%d", [signal.channelID intValue]];
+    self.detailViewController.sliderIdTextField.text = [NSString stringWithFormat:@"%d", [signal.sliderID intValue]];
+    self.detailViewController.volumeLevelTextField.text = [NSString stringWithFormat:@"%d",[signal.volumeLevel intValue]];
+}
+
+-(void)detailViewControllerDidGenerateSignal:(DetailViewController *)sender {
+    NSLog(@"We are here");
+    [self fetchSignalDataIntoDocument:self.signalDatabase];   
+}
+
+-(void)detailViewControllerDidAddOperatorAndAudioSystem:(DetailViewController *)sender {
+    
+    NSLog (@"Adding the guys"); 
+    Operator *operator = [NSEntityDescription insertNewObjectForEntityForName:@"Operator" inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    operator.name = [NSString stringWithString:self.detailViewController.operatorTextField.text];
+    operator.operatorID = [NSNumber numberWithInt:arc4random() % 10];
+    
+    AudioSystem *audioSystem = [NSEntityDescription insertNewObjectForEntityForName:@"AudioSystem" inManagedObjectContext:self.signalDatabase.managedObjectContext];
+    audioSystem.name = [NSString stringWithString:self.detailViewController.audioSystemTextField.text];
+    audioSystem.audioSystemID = [NSNumber numberWithInt:arc4random() % 10];
+    [self.signalDatabase saveToURL:self.signalDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:NULL];
+    
 }
 
 
